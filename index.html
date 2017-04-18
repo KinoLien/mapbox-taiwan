@@ -7,13 +7,31 @@
 		<link href='https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.css' rel='stylesheet' />
     </head>
 <body>
-<div id='map' style='width: 400px; height: 300px;'></div>
+<div id='map' style='width: 500px; height: 500px;'></div>
 <script>
-  mapboxgl.accessToken = 'pk.eyJ1Ijoia2lub2xpZW4iLCJhIjoiY2oxbXl6M2c3MDBhMzMzbjFidTk3d2c5cCJ9._bo3YoVaqpc3a7HeAP_UNQ';
-  var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9'
-  });
+  // mapboxgl.accessToken = 'pk.eyJ1Ijoia2lub2xpZW4iLCJhIjoiY2oxbXl6M2c3MDBhMzMzbjFidTk3d2c5cCJ9._bo3YoVaqpc3a7HeAP_UNQ';
+  // var map = new mapboxgl.Map({
+  //   container: 'map',
+  //   // style: 'mapbox://styles/mapbox/streets-v9',
+  //   style: 'mapbox://styles/kinolien/cj1n8p6cp00132rpi59reqybf',
+  //   center: [120.201,24.175],
+  //   zoom: 6
+  // });
+  	mapboxgl.accessToken = 'pk.eyJ1Ijoia2lub2xpZW4iLCJhIjoiY2oxbXl6M2c3MDBhMzMzbjFidTk3d2c5cCJ9._bo3YoVaqpc3a7HeAP_UNQ';
+    mapboxgl.config.API_URL = 'https://api.mapbox.com';
+
+    window.map = new mapboxgl.Map({
+        container: 'map',
+        // style: {"version":8,"name":"blank map ROC in Taiwan","metadata":{"mapbox:autocomposite":true,"mapbox:type":"template","mapbox:trackposition":false},"center":[120.20127119696599,24.175459166470702],"zoom":6.037559956986547,"bearing":0,"pitch":0,"sources":{"composite":{"url":"mapbox:\/\/kinolien.6oegptrk","type":"vector"}},"sprite":"mapbox:\/\/sprites\/kinolien\/cj1n8p6cp00132rpi59reqybf?fresh=true","glyphs":"mapbox:\/\/fonts\/kinolien\/{fontstack}\/{range}.pbf","layers":[{"id":"background","type":"background","paint":{"background-color":"rgba(144,109,71,0)","background-opacity":0.78}},{"layout":{"visibility":"visible"},"type":"fill","source":"composite","id":"twcounty2010-7gk18m","paint":{"fill-color":"hsl(0, 0%, 85%)","fill-opacity":1,"fill-outline-color":"hsl(0, 0%, 51%)"},"source-layer":"twCounty2010-7gk18m"}],"created":"2017-04-18T07:40:33.909Z","id":"cj1n8p6cp00132rpi59reqybf","modified":"2017-04-18T09:05:09.662Z","owner":"kinolien","visibility":"private","draft":false},
+        style: 'mapbox://styles/kinolien/cj1n8p6cp00132rpi59reqybf',
+        hash: true,
+        scrollZoom: true,
+        minZoom: 6,
+        maxZoom: 12,
+        zoom: 6,
+        center: [120.509,24.079],
+        maxBounds: [ [117.139,20.896], [123.152,26.878] ]
+    }).addControl(new mapboxgl.NavigationControl(), 'top-left');
 </script>	
 </body>
 </html>
